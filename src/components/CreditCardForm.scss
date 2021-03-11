@@ -26,27 +26,10 @@
   &__child {
     display: flex;
     flex-direction: column;
+    width: 50%;
 
     &:first-child {
-      width: 70%;
       margin-right: 40px;
-    }
-
-    &:last-child {
-      width: 30%;
-    }
-  }
-
-  &__double {
-    display: flex;
-    width: 100%;
-
-    input {
-      width: 50%;
-
-      &:first-child {
-        margin-right: 10px;
-      }
     }
   }
 
