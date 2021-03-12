@@ -4,4 +4,4 @@ import CreditCard from './CreditCard';
 
 const wrapper = shallow(<CreditCard />);
 
-expect(wrapper.find('.credit-card-form').exists()).toBeTruthy();
+expect(wrapper.find('.credit-card').exists()).toBeTruthy();
