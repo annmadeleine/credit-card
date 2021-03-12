@@ -1,16 +1,31 @@
 import './CreditCard.scss';
 import React from 'react';
 
-const CreditCard: React.FC = () => {
+interface CreditCardProps {
+  readonly cardNumber?: string | undefined;
+  readonly cardHolder?: string;
+  readonly cardExpiration?: string | undefined;
+  readonly cardCVV?: string;
+  readonly onFocus?: boolean;
+}
+
+const CreditCard = (values: CreditCardProps): JSX.Element => {
+  const { cardNumber, cardHolder, cardExpiration, cardCVV, onFocus } = values;
   return (
     <div className="credit-card">
-      <div className="credit-card__inner">
+      <div className={`credit-card__inner ${onFocus ? 'active' : ''}`}>
         <div className="credit-card__front">
           <div className="credit-card__card">
-            <div className="credit-card__number">#### #### #### ####</div>
+            <div className="credit-card__number">
+              {cardNumber ? cardNumber : '#### #### #### ####'}
+            </div>
             <div className="credit-card__group">
-              <div className="credit-card__name">John Doe</div>
-              <div className="credit-card__expire">09/21</div>
+              <div className="credit-card__holder">
+                {cardHolder ? cardHolder : 'John Doe'}
+              </div>
+              <div className="credit-card__expire">
+                {cardExpiration ? cardExpiration : '00/00'}
+              </div>
             </div>
           </div>
         </div>
@@ -19,7 +34,9 @@ const CreditCard: React.FC = () => {
             <div className="credit-card__stripe"></div>
             <div className="credit-card__group">
               <div className="credit-card__empty">
-                <span className="credit-card__cvv">502</span>
+                <span className="credit-card__cvc">
+                  {cardCVV ? cardCVV : '000'}
+                </span>
               </div>
             </div>
           </div>

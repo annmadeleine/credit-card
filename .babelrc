@@ -1,5 +1,13 @@
 {
   "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "react",
+    "stage-0",
     "@babel/preset-env",
     "@babel/preset-react",
     "@babel/preset-typescript"
@@ -11,5 +19,13 @@
         "regenerator": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "start": {
+      "presets": ["react-hmre"]
+    },
+    "test": {
+      "presets": ["es2015", "react", "stage-0"]
+    }
+  }
 }

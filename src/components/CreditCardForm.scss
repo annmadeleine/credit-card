@@ -12,6 +12,16 @@
   box-shadow: $shadow;
   z-index: 0;
 
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__warning {
+    font-size: $font-size-sm;
+    color: $color-warning;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -43,7 +53,7 @@
     padding: 10px;
   }
 
-  &__name {
+  &__holder {
     text-transform: uppercase;
   }
 

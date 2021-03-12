@@ -1,24 +1,25 @@
 @import '../variables.scss';
 
+.active {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
 .credit-card {
   width: 350px;
   height: 200px;
   perspective: 1000px;
   z-index: 1;
   position: absolute;
-  margin-top: -400px;
+  margin-top: -260px;
+  margin-left: 15px;
 
   &__inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s 0.4s;
+    transition: transform 0.8s 0.2s;
     transform-style: preserve-3d;
-  }
-
-  &:hover &__inner {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
   }
 
   &__card {
@@ -63,7 +64,7 @@
     margin-bottom: 50px;
   }
 
-  &__name {
+  &__holder {
     text-transform: uppercase;
   }
 
@@ -84,7 +85,7 @@
     justify-content: flex-end;
   }
 
-  &__cvv {
+  &__cvc {
     color: $color-black;
     align-self: center;
     margin-right: 10px;
